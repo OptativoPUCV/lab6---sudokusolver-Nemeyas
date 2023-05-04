@@ -69,10 +69,10 @@ List* get_adj_nodes(Node* n){
             pushBack(list, nuevo);
             cont++;
           }while(cont!=9);
+          return list;
           }
         }
       }
-  return list;
 }
 
 
