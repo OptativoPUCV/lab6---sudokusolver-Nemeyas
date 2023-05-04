@@ -107,9 +107,10 @@ int is_final(Node* n){
 
 Node* DFS(Node* initial, int* cont){
   Stack* S=createStack();
-  push(S,I);
-  while (size(S) != 0){
-     node* n = pop(S);
+  push(S,initial);
+  while (is_empty(S) != 0){
+     Node* n = top(S);
+     pop(S);
      if n.visited==true continue;
     
      //visitar nodo

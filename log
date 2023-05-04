@@ -357,3 +357,63 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 eed4825
+Thu 04 May 2023 11:45:53 PM UTC: 
+ sudoku.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:114:9: error: expected ‘(’ before ‘n’
+  114 |      if n.visited==true continue;
+      |         ^
+      |         (
+sudoku.c:114:10: error: ‘n’ is a pointer; did you mean to use ‘->’?
+  114 |      if n.visited==true continue;
+      |          ^
+      |          ->
+sudoku.c:117:7: error: ‘n’ is a pointer; did you mean to use ‘->’?
+  117 |      n.visited=true
+      |       ^
+      |       ->
+sudoku.c:117:16: error: ‘true’ undeclared (first use in this function)
+  117 |      n.visited=true
+      |                ^~~~
+sudoku.c:4:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    3 | #include "list.h"
+  +++ |+#include <stdbool.h>
+    4 | 
+sudoku.c:117:16: note: each undeclared identifier is reported only once for each function it appears in
+  117 |      n.visited=true
+      |                ^~~~
+sudoku.c:117:20: error: expected ‘;’ before ‘List’
+  117 |      n.visited=true
+      |                    ^
+      |                    ;
+  118 |      List* adj=get_adj_nodes(n);
+      |      ~~~~           
+sudoku.c:119:6: error: unknown type name ‘node’; did you mean ‘Node’?
+  119 |      node* aux= first(adj);
+      |      ^~~~
+      |      Node
+sudoku.c:119:23: error: ‘adj’ undeclared (first use in this function)
+  119 |      node* aux= first(adj);
+      |                       ^~~
+sudoku.c:112:12: error: variable ‘n’ set but not used [-Werror=unused-but-set-variable]
+  112 |      Node* n = top(S);
+      |            ^
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+52cb92b
