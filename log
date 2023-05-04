@@ -26,3 +26,29 @@ list.h:23:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 d21b3ee
+Thu 04 May 2023 10:58:14 PM UTC: 
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:64:25: error: comparison between pointer and integer [-Werror]
+   64 |         if(n->sudo[i][j]==NULL){
+      |                         ^~
+sudoku.c:66:21: error: statement with no effect [-Werror=unused-value]
+   66 |           n->sudo[i][j];
+      |           ~~~~~~~~~~^~~
+sudoku.c:70:17: error: ‘curre’ undeclared (first use in this function)
+   70 |     if(is_valid(curre) == 0){
+      |                 ^~~~~
+sudoku.c:70:17: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:71:14: error: expected expression before ‘List’
+   71 |     pushBack(List *list, void *data);
+      |              ^~~~
+sudoku.c:71:5: error: too few arguments to function ‘pushBack’
+   71 |     pushBack(List *list, void *data);
+      |     ^~~~~~~~
+In file included from test.c:4:
+list.h:23:6: note: declared here
+   23 | void pushBack(List* list, void* data);
+      |      ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+033a97d
