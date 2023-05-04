@@ -52,3 +52,42 @@ list.h:23:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 033a97d
+Thu 04 May 2023 11:04:58 PM UTC: 
+ sudoku.c | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:67:27: error: expected expression before ‘;’ token
+   67 |             n->sudo[i][j]=;
+      |                           ^
+sudoku.c:69:22: error: expected expression before ‘List’
+   69 |             pushBack(List *list, void *data);
+      |                      ^~~~
+sudoku.c:69:13: error: too few arguments to function ‘pushBack’
+   69 |             pushBack(List *list, void *data);
+      |             ^~~~~~~~
+In file included from test.c:4:
+list.h:23:6: note: declared here
+   23 | void pushBack(List* list, void* data);
+      |      ^~~~~~~~
+In file included from test.c:5:
+sudoku.c:66:19: error: unused variable ‘nuevo’ [-Werror=unused-variable]
+   66 |             Node* nuevo=
+      |                   ^~~~~
+sudoku.c:60:11: error: unused variable ‘list’ [-Werror=unused-variable]
+   60 |     List* list=createList();
+      |           ^~~~
+sudoku.c: At top level:
+sudoku.c:75:5: error: expected identifier or ‘(’ before ‘return’
+   75 |     return list;
+      |     ^~~~~~
+sudoku.c:76:1: error: expected identifier or ‘(’ before ‘}’ token
+   76 | }
+      | ^
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:74:5: error: control reaches end of non-void function [-Werror=return-type]
+   74 |     }
+      |     ^
+cc1: all warnings being treated as errors
+Compilation failed
+c46ed51
