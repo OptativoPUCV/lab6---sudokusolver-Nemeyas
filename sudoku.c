@@ -34,7 +34,7 @@ Node* read_file (char* file_name){
 }
 
 void print_node(Node* n){
-    int i,j;
+    int i,j, k=3,p;
     for(i=0;i<9;i++){
        for(j=0;j<9;j++)
           printf("%d ", n->sudo[i][j]);
@@ -44,14 +44,24 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  
-  int k=4,p; 
-    for(p=0;p<9;p++){
+  int i,j,filas[9], columas[9]; 
+  for(i=0; i<9; i++){
+    
+  }
+
+  for(j=0; j<9; j++){
+    
+  }
+
+  for(i=0;p<9;p++){
+    for(j=0;i<9;i++){
+      filas[i]=0;
+      columnas[j]=0;
         int i=3*(k/3) + (p/3) ;
         int j=3*(k%3) + (p%3) ;
-        printf("%d ",n->sudo[i][j]);
-        if(p%3 == 2) printf("\n");
+        if(p%3 == 0) return ;
     }
+  }
     return 1;
 }
 
@@ -65,7 +75,7 @@ List* get_adj_nodes(Node* n){
           do{
             Node* nuevo= copy(n);
             nuevo->sudo[i][j]= cont;
-            //if(is_valid(curre) == 0)
+            if(is_valid(nuevo) == 0)
             pushBack(list, nuevo);
             cont++;
           }while(cont!=9);
