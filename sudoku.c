@@ -111,7 +111,7 @@ Node* DFS(Node* initial, int* cont){
   while (is_empty(S) == 0){
      Node* n = top(S);
      pop(S);
-     if(is_final(n)==0){
+     if(is_final(n)){
        return n;
      }
      List* adj=get_adj_nodes(n);
