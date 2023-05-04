@@ -67,6 +67,7 @@ int is_valid(Node* n){
     }
   }
     return 1;* mas rato*/
+  return 1;
 }
 
 
