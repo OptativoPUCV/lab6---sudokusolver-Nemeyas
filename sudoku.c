@@ -63,7 +63,7 @@ List* get_adj_nodes(Node* n){
       for(j=0; j<9; j++){
         if(n->sudo[i][j]==0){
           do{
-            Node* nuevo= copy(Node *n)
+            Node* nuevo= copy(n);
             nuevo->sudo[i][j]= cont;
             //if(is_valid(curre) == 0)
             pushBack(list, nuevo);
