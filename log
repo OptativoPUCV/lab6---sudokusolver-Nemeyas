@@ -288,3 +288,72 @@ Thu 04 May 2023 11:42:28 PM UTC:
  tests:  3|3
 total_score: 25/70
 eafae41
+Thu 04 May 2023 11:43:41 PM UTC: 
+ sudoku.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:110:10: error: ‘I’ undeclared (first use in this function)
+  110 |   push(S,I);
+      |          ^
+sudoku.c:110:10: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:111:10: error: implicit declaration of function ‘size’ [-Werror=implicit-function-declaration]
+  111 |   while (size(S) != 0){
+      |          ^~~~
+sudoku.c:112:6: error: unknown type name ‘node’; did you mean ‘Node’?
+  112 |      node* n = pop(S);
+      |      ^~~~
+      |      Node
+sudoku.c:112:16: error: void value not ignored as it ought to be
+  112 |      node* n = pop(S);
+      |                ^~~
+sudoku.c:113:9: error: expected ‘(’ before ‘n’
+  113 |      if n.visited==true continue;
+      |         ^
+      |         (
+sudoku.c:113:10: error: request for member ‘visited’ in something not a structure or union
+  113 |      if n.visited==true continue;
+      |          ^
+sudoku.c:116:7: error: request for member ‘visited’ in something not a structure or union
+  116 |      n.visited=true
+      |       ^
+sudoku.c:116:16: error: ‘true’ undeclared (first use in this function)
+  116 |      n.visited=true
+      |                ^~~~
+sudoku.c:4:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    3 | #include "list.h"
+  +++ |+#include <stdbool.h>
+    4 | 
+sudoku.c:116:20: error: expected ‘;’ before ‘List’
+  116 |      n.visited=true
+      |                    ^
+      |                    ;
+  117 |      List* adj=get_adj_nodes(n);
+      |      ~~~~           
+sudoku.c:118:6: error: unknown type name ‘node’; did you mean ‘Node’?
+  118 |      node* aux= first(adj);
+      |      ^~~~
+      |      Node
+sudoku.c:118:23: error: ‘adj’ undeclared (first use in this function)
+  118 |      node* aux= first(adj);
+      |                       ^~~
+sudoku.c:112:12: error: variable ‘n’ set but not used [-Werror=unused-but-set-variable]
+  112 |      node* n = pop(S);
+      |            ^
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+eed4825
