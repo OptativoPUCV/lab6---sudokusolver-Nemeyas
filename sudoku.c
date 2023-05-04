@@ -108,19 +108,19 @@ int is_final(Node* n){
 Node* DFS(Node* initial, int* cont){
   Stack* S=createStack();
   push(S,initial);
-  while (is_empty(S) != 0){
+  while (is_empty(S) == 0){
      Node* n = top(S);
      pop(S);
-     if n.visited==true continue;
-    
-     //visitar nodo
-     n.visited=true
+     if(is_final(n)==0){
+       return n;
+     }
      List* adj=get_adj_nodes(n);
-     node* aux= first(adj);
-     while(aux){
+     Node* aux= first(adj);
+     while(aux != NULL){
         push(S,aux);
         aux=next(adj);
      }
+  }
 
   return NULL;
 }
