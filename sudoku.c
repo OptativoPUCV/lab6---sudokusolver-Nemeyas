@@ -34,7 +34,7 @@ Node* read_file (char* file_name){
 }
 
 void print_node(Node* n){
-    int i,j, k=3,p;
+    int i,j;
     for(i=0;i<9;i++){
        for(j=0;j<9;j++)
           printf("%d ", n->sudo[i][j]);
@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i,j,filas[9], columnas[9]; 
+  /*int i,j, k=4,p, aux, matrizaux[10];
   for(i=0; i<9; i++){
     
   }
@@ -53,17 +53,20 @@ int is_valid(Node* n){
     
   }
 
-  for(i=0;p<9;p++){
-    for(j=0;i<9;i++){
-      filas[i]=0;
-      columnas[j]=0;
+  for(i=0; i<9; i++){
+    for(j=0; j<9; j++){
       
+      for(p=0; p<9; p++){ 
         int i=3*(k/3) + (p/3) ;
         int j=3*(k%3) + (p%3) ;
-        if(p%3 == 0) return ;
+        aux = n->sudo[i][j];
+        if(p%3 == 0){
+          
+        } return ;
+      }
     }
   }
-    return 1;
+    return 1;* mas rato*/
 }
 
 
@@ -76,7 +79,7 @@ List* get_adj_nodes(Node* n){
           do{
             Node* nuevo= copy(n);
             nuevo->sudo[i][j]= cont;
-            if(is_valid(nuevo) == 0)
+            //if(is_valid(nuevo) == 0)
             pushBack(list, nuevo);
             cont++;
           }while(cont!=9);
@@ -90,6 +93,14 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
+  int i,j;
+  for(i=0; i<9; i++){
+      for(j=0; j<9; j++){
+        if(n->sudo[i][j]==0){
+          return 1;
+          }
+        }
+      }
     return 0;
 }
 
