@@ -80,7 +80,7 @@ int is_valid(Node* n){
         aux = n->sudo[i][j];
         if(p%3 == 0){
           
-        } return ;
+        } return 1;
       }
     }
   }
