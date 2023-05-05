@@ -578,3 +578,14 @@ sudoku.c:47:19: error: variable ‘aux’ set but not used [-Werror=unused-but-s
 cc1: all warnings being treated as errors
 Compilation failed
 cf3f87e
+Fri 05 May 2023 12:16:54 AM UTC: 
+ sudoku.c | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:47:19: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+   47 |   int i,j, k=4,p, aux,cont=0, matrizaux[10];
+      |                   ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+9cc7a06

@@ -70,23 +70,24 @@ int is_valid(Node* n){
       }
     }while(cont!=10);
   }
-
+  cont=0;
   for(i=0; i<9; i++){
-    for(j=0; j<9; j++){
-      
-      for(p=0; p<9; p++){ 
-        int i=3*(k/3) + (p/3) ;
-        int j=3*(k%3) + (p%3) ;
-        aux = n->sudo[i][j];
-        if(p%3 == 0){
-          
-        } return 1;
+    do{
+      matrizaux[cont]=0;
+    }while(cont!=10);
+    for(p=0; p<9; p++){ 
+      int i=3*(k/3) + (p/3) ;
+      int j=3*(k%3) + (p%3) ;
+      aux = n->sudo[i][j];
+      if(n->sudo[i][j] != 0){ 
+        if(matrizaux[n->sudo[i][j]] == 1){
+          return 0;
+        }
       }
     }
   }
   return 1;
 }
-
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
