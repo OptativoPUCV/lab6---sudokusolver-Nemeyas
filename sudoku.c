@@ -83,6 +83,7 @@ int is_valid(Node* n){
           return 0;
         }
       }
+      matrizaux[n->sudo[i][j]] = 1;
     }
   }
   return 1;
