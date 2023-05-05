@@ -44,10 +44,11 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i,j, k=4,p,cont=0, matrizaux[10];
+  int i,j, k=4,p,cont, matrizaux[10];
   for(i=0; i<9; i++){
-    do{
+    for(cont=0; cont<10; cont++){
       matrizaux[cont]=0;
+    }
       cont++;
       for(j=0; j<9; j++){
         if(n->sudo[i][j]!=0){
@@ -55,26 +56,24 @@ int is_valid(Node* n){
         }
         matrizaux[n->sudo[i][j]] = 1;
       }
-    }while(cont!=10);
   }
   cont=0;
   for(j=0; j<9; j++){
-    do{
+    for(cont=0; cont<10; cont++){
       matrizaux[cont]=0;
-      cont++;
-      for(i=0; i<9; i++){
-        if(n->sudo[i][j]!=0){
-          if(matrizaux[n->sudo[i][j]] == 1) return 0;
-        }
-        matrizaux[n->sudo[i][j]] = 1;
+    }
+    cont++;
+    for(i=0; i<9; i++){
+      if(n->sudo[i][j]!=0){
+        if(matrizaux[n->sudo[i][j]] == 1) return 0;
       }
-    }while(cont!=10);
+      matrizaux[n->sudo[i][j]] = 1;
+    }
   }
-  cont=0;
   for(i=0; i<9; i++){
-    do{
+    for(cont=0; cont<10; cont++){
       matrizaux[cont]=0;
-    }while(cont!=10);
+    }
     for(p=0; p<9; p++){ 
       int i=3*(k/3) + (p/3) ;
       int j=3*(k%3) + (p%3) ;
