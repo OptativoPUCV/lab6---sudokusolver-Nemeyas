@@ -455,3 +455,29 @@ sudoku.c:47:19: error: variable ‘aux’ set but not used [-Werror=unused-but-s
 cc1: all warnings being treated as errors
 Compilation failed
 17c34b4
+Fri 05 May 2023 12:01:21 AM UTC: 
+ sudoku.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:75:11: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+   75 |         } return ;
+      |           ^~~~~~
+sudoku.c:46:5: note: declared here
+   46 | int is_valid(Node* n){
+      |     ^~~~~~~~
+sudoku.c:79:15: error: unknown type name ‘mas’
+   79 |     return 1; mas rato*/
+      |               ^~~
+sudoku.c:79:23: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘*’ token
+   79 |     return 1; mas rato*/
+      |                       ^
+sudoku.c:47:31: error: variable ‘matrizaux’ set but not used [-Werror=unused-but-set-variable]
+   47 |   int i,j, k=4,p, aux,cont=0, matrizaux[10];
+      |                               ^~~~~~~~~
+sudoku.c:47:19: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+   47 |   int i,j, k=4,p, aux,cont=0, matrizaux[10];
+      |                   ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+43a8b06
