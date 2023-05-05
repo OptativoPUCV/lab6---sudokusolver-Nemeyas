@@ -57,7 +57,6 @@ int is_valid(Node* n){
         matrizaux[n->sudo[i][j]] = 1;
       }
   }
-  cont=0;
   for(j=0; j<9; j++){
     for(cont=0; cont<10; cont++){
       matrizaux[cont]=0;
