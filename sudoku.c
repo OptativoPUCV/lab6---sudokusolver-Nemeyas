@@ -44,13 +44,21 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  /*int i,j, k=4,p, aux, matrizaux[10];
+  int i,j, k=4,p, aux,cont=0, matrizaux[10];
   for(i=0; i<9; i++){
-    
+    do{
+      matrizaux[cont]=0;
+      cont++;
+      for(j=0; j<9; j++){
+        
+      }
+    }while(cont!=10);
   }
 
   for(j=0; j<9; j++){
-    
+    do{
+      
+    }while(cont!=10);
   }
 
   for(i=0; i<9; i++){
@@ -66,7 +74,7 @@ int is_valid(Node* n){
       }
     }
   }
-    return 1;* mas rato*/
+    return 1; mas rato*/
   return 1;
 }
 
@@ -80,7 +88,7 @@ List* get_adj_nodes(Node* n){
           do{
             Node* nuevo= copy(n);
             nuevo->sudo[i][j]= cont;
-            //if(is_valid(nuevo) == 0)
+            //if(is_valid(nuevo))
             pushBack(list, nuevo);
             cont++;
           }while(cont!=9);
