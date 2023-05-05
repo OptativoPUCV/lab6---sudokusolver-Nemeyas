@@ -53,6 +53,7 @@ int is_valid(Node* n){
         if(n->sudo[i][j]!=0){
           if(matrizaux[n->sudo[i][j]] == 1) return 0;
         }
+        matrizaux[n->sudo[i][j]] = 1;
       }
     }while(cont!=10);
   }
