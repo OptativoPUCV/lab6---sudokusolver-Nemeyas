@@ -49,7 +49,6 @@ int is_valid(Node* n){
     for(cont=0; cont<10; cont++){
       matrizaux[cont]=0;
     }
-      cont++;
       for(j=0; j<9; j++){
         if(n->sudo[i][j]!=0){
           if(matrizaux[n->sudo[i][j]] == 1) return 0;
@@ -61,7 +60,6 @@ int is_valid(Node* n){
     for(cont=0; cont<10; cont++){
       matrizaux[cont]=0;
     }
-    cont++;
     for(i=0; i<9; i++){
       if(n->sudo[i][j]!=0){
         if(matrizaux[n->sudo[i][j]] == 1) return 0;
